@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/check": "^0.5.3",
     "astro": "^4.3.6",
+    "astrocors": "^0.1.4",
+    "resend": "^3.2.0",
     "typescript": "^5.3.3"
   }
 }

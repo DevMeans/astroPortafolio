@@ -1,9 +1,11 @@
-<div class="sec-box" data-scroll-index="4">
+---
+// Agrega un evento de escucha para el clic en el botón
+---
 
+<div class="sec-box" data-scroll-index="4">
     <div class="bg"></div>
 
     <div class="content-box">
-
         <!-- ==================== Start Contact ==================== -->
 
         <div class="contact">
@@ -11,36 +13,47 @@
                 <div class="d-inline-block">
                     <div class="sub-title-icon d-flex align-items-center">
                         <span class="icon pe-7s-map-marker"></span>
-                        <h6>Contact Us</h6>
+                        <h6>Contacto</h6>
                     </div>
                 </div>
                 <h3>Let's make your brand brilliant!</h3>
             </div>
             <div class="full-width wow fadeInUp" data-wow-delay=".5s">
-                <form id="contact-form" method="post" action="https://ui-themez.smartinnovates.net/items/Gilb/contact.php">
-
+                <form id="contact-form" method="post" action="">
                     <div class="messages"></div>
 
                     <div class="controls row">
-
                         <div class="col-lg-6">
                             <div class="form-group mb-30">
-                                <input id="form_name" type="text" name="name"
-                                    placeholder="Your Name" required="required">
+                                <input
+                                    id="form_name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required="required"
+                                />
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="form-group mb-30">
-                                <input id="form_email" type="email" name="email"
-                                    placeholder="Your Email" required="required">
+                                <input
+                                    id="form_email"
+                                    type="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    required="required"
+                                />
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="form-group">
-                                <textarea id="form_message" name="message"
-                                    placeholder="Your Message" required="required"></textarea>
+                                <textarea
+                                    id="form_message"
+                                    name="message"
+                                    placeholder="Your Message"
+                                    required="required"></textarea>
                             </div>
                             <div class="mt-30">
                                 <button type="submit">
@@ -48,14 +61,66 @@
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </form>
             </div>
         </div>
 
         <!-- ==================== End Contact ==================== -->
-
     </div>
-
 </div>
+
+<script>
+    const enviarEmail = (emisor = "", mensaje = "") => {
+        const url = "https://api.resend.com/emails";
+        const token = "re_eKcBiZmF_FxM4JuqpC6SqCDQQkDBypRJU";
+
+        // Define los datos del correo a enviar
+        const data = {
+            from: 'Acme <onboarding@resend.dev>',
+            to: "gmraivan@gmail.com", // Cambia esta dirección de correo por la deseada
+            subject: "Portafolio Contacto",
+            html: `<p>${mensaje}<p>`,
+        };
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            mode:'no-cors'
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Error al enviar el correo.");
+                }
+                console.log("Correo enviado exitosamente.");
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    };
+
+    const botonEnviar = document.querySelector('button[type="submit"]');
+
+    // Agrega un evento de escucha para el clic en el botón
+    botonEnviar!.addEventListener("click", function (event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+        // Obtén los valores de los campos del formulario
+        const emisorInput = document.getElementById(
+            "form_email",
+        ) as HTMLInputElement;
+        const mensajeInput = document.getElementById(
+            "form_message",
+        ) as HTMLInputElement;
+        const emisor = emisorInput.value;
+        console.log(emisor)
+        const mensaje = mensajeInput.value;
+        // Llama a la función enviarEmail con los valores obtenidos
+        enviarEmail(emisor, mensaje);
+        console.log('Mensaje enviado')
+    });
+</script>
