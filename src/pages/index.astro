@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Loading from "../components/Loading.astro";
+import Progress from "../components/Progress.astro";
+import Navbar from "../components/Navbar.astro";
+import Menu from "../components/Menu.astro";
+import CardPerfil from "../components/CardPerfil.astro";
+import About from "../components/About.astro";
+import Skills from '../components/Skills.astro';
+import Services from '../components/Services.astro';
+import Portafolio from '../components/Portafolio.astro'
+---
+
+<Layout title="Welcome to Astro.">
+	<Loading />
+	<Progress />
+	<Navbar />
+	<main class="container">
+		<section class="main-sec pt-80 pb-80">
+			<div class="row sm-marg">
+				<div class="col-lg-4">
+					<!-- //TODO ::Portal -->
+					<div id="sticky_item" class="sticky">
+						<div class="left-area">
+							<Menu />
+							<CardPerfil />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="main-boxs">
+						<About></About>
+						<Skills></Skills>
+						<Services></Services>
+						<Portafolio></Portafolio>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
