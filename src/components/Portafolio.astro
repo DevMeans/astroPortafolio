@@ -1,11 +1,57 @@
-<div class="sec-box" data-scroll-index="2">
+---
+import PortafolioItem from "./PortafolioItem.astro";
 
+interface Propertys {
+    title: string;
+    img?: string;
+    tag: string[];
+    delay: string;
+    link: string;
+}
+const ArrayArreglo: Propertys[] = [
+    {
+        title: "Nucleus App",
+        img: "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65ce8af7b2cc710008289a96/screenshot_2024-02-15-22-07-22-0000.webp&fit=cover&h=500&w=800",
+        delay: ".2s",
+        link: "https://proyecto-nucleus-expert.netlify.app",
+        tag: ["HTML", "CSS"],
+    },
+    {
+        title: "Spa Salon",
+        img: "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65ce86b89566e70008b9408f/screenshot_2024-02-15-21-49-19-0000.webp&fit=cover&h=500&w=800",
+        delay: ".4s",
+        link: "https://salon-style.netlify.app",
+        tag: ["HTML", "CSS"],
+    },
+    {
+        title: "Econmmerce Teslo",
+        img: "https://res.cloudinary.com/personal-proyect/image/upload/v1708045790/para_mostrar_lrniax.png",
+        delay: ".6s",
+        link: "https://shop-alpha-six.vercel.app/",
+        tag: ["NEXTJS", "PRISMA", "AUTH", "NODEJS", "EXPRESS","TAILWIND", "EN DESARROLLO"],
+    },
+    {
+        title: "Tienda Cafe",
+        img: "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65cd69a89be8900008cdc426/screenshot_2024-02-15-01-37-38-0000.webp&fit=cover&h=500&w=800",
+        delay: ".1s",
+        link: "https://tiendaporcafe.netlify.app/",
+        tag: ["HTML", "CSS", "GULP", "SASS"],
+    },
+    {
+        title: "Delivery App",
+        img: "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65cd79cc2a46f65669b9da18/screenshot_2024-02-15-02-41-58-0000.webp&fit=cover&h=500&w=800",
+        delay: "1.2s",
+        link: "https://delivery-app-site-deploy.netlify.app/",
+        tag: ["HTML", "CSS", "GULP", "SASS"],
+    },
+    ] 
+---
+
+<div class="sec-box" data-scroll-index="2">
     <div class="bg"></div>
 
     <div class="content-box">
-
         <!-- ==================== Start portfolio ==================== -->
-
         <div class="portfolio">
             <div class="sec-head mb-40 wow fadeInUp">
                 <div class="d-inline-block">
@@ -14,206 +60,26 @@
                         <h6>My Portfolio</h6>
                     </div>
                 </div>
-                <h3>Helping digital brands <br> scale with design.</h3>
+                <h3>Helping digital brands <br /> scale with design.</h3>
             </div>
-
             <div class="gallery">
-
                 <div class="row">
-                    <div class="col-lg-6 items wow fadeInUp" data-wow-delay=".2s">
-                        <div class="item">
-                            <div class="img">
-                                <img src="assets/imgs/works/1.jpg" alt="">
-                                <a href="project-details.html" class="link"></a>
-                            </div>
-                            <div class="cont d-flex align-items-center">
-                                <div>
-                                    <h6>UI-UX Design</h6>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="arrow">
-                                        <a href="project-details.html">
-                                            <svg class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px" y="0px" viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve" style="stroke-width: 2;">
-                                                <line x1="0" y1="16" x2="33" y2="16"></line>
-                                                <line x1="17.3" y1="0.7" x2="33.2" y2="16.5">
-                                                </line>
-                                                <line x1="17.3" y1="31.6" x2="33.5" y2="15.4">
-                                                </line>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 items wow fadeInUp" data-wow-delay=".4s">
-                        <div class="item">
-                            <div class="img">
-                                <img src="assets/imgs/works/2.jpg" alt="">
-                                <a href="project-details.html" class="link"></a>
-                            </div>
-                            <div class="cont d-flex align-items-center">
-                                <div>
-                                    <h6>UI-UX Design</h6>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="arrow">
-                                        <a href="project-details.html">
-                                            <svg class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px" y="0px" viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve" style="stroke-width: 2;">
-                                                <line x1="0" y1="16" x2="33" y2="16"></line>
-                                                <line x1="17.3" y1="0.7" x2="33.2" y2="16.5">
-                                                </line>
-                                                <line x1="17.3" y1="31.6" x2="33.5" y2="15.4">
-                                                </line>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 items wow fadeInUp" data-wow-delay=".6s">
-                        <div class="item">
-                            <div class="img">
-                                <img src="assets/imgs/works/4.jpg" alt="">
-                                <a href="project-details.html" class="link"></a>
-                            </div>
-                            <div class="cont d-flex align-items-center">
-                                <div>
-                                    <h6>UI-UX Design</h6>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="arrow">
-                                        <a href="project-details.html">
-                                            <svg class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px" y="0px" viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve" style="stroke-width: 2;">
-                                                <line x1="0" y1="16" x2="33" y2="16"></line>
-                                                <line x1="17.3" y1="0.7" x2="33.2" y2="16.5">
-                                                </line>
-                                                <line x1="17.3" y1="31.6" x2="33.5" y2="15.4">
-                                                </line>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 items wow fadeInUp" data-wow-delay=".8s">
-                        <div class="item">
-                            <div class="img">
-                                <img src="assets/imgs/works/3.jpg" alt="">
-                                <a href="project-details.html" class="link"></a>
-                            </div>
-                            <div class="cont d-flex align-items-center">
-                                <div>
-                                    <h6>UI-UX Design</h6>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="arrow">
-                                        <a href="project-details.html">
-                                            <svg class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px" y="0px" viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve" style="stroke-width: 2;">
-                                                <line x1="0" y1="16" x2="33" y2="16"></line>
-                                                <line x1="17.3" y1="0.7" x2="33.2" y2="16.5">
-                                                </line>
-                                                <line x1="17.3" y1="31.6" x2="33.5" y2="15.4">
-                                                </line>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 items wow fadeInUp" data-wow-delay="1s">
-                        <div class="item">
-                            <div class="img">
-                                <img src="assets/imgs/works/5.jpg" alt="">
-                                <a href="project-details.html" class="link"></a>
-                            </div>
-                            <div class="cont d-flex align-items-center">
-                                <div>
-                                    <h6>UI-UX Design</h6>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="arrow">
-                                        <a href="project-details.html">
-                                            <svg class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px" y="0px" viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve" style="stroke-width: 2;">
-                                                <line x1="0" y1="16" x2="33" y2="16"></line>
-                                                <line x1="17.3" y1="0.7" x2="33.2" y2="16.5">
-                                                </line>
-                                                <line x1="17.3" y1="31.6" x2="33.5" y2="15.4">
-                                                </line>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 items wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="item">
-                            <div class="img">
-                                <img src="assets/imgs/works/8.jpg" alt="">
-                                <a href="project-details.html" class="link"></a>
-                            </div>
-                            <div class="cont d-flex align-items-center">
-                                <div>
-                                    <h6>UI-UX Design</h6>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="arrow">
-                                        <a href="project-details.html">
-                                            <svg class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px" y="0px" viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve" style="stroke-width: 2;">
-                                                <line x1="0" y1="16" x2="33" y2="16"></line>
-                                                <line x1="17.3" y1="0.7" x2="33.2" y2="16.5">
-                                                </line>
-                                                <line x1="17.3" y1="31.6" x2="33.5" y2="15.4">
-                                                </line>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        ArrayArreglo.map((r) => {
+                            return (
+                                <PortafolioItem
+                                    link={r.link}
+                                    title={r.title}
+                                    tag={r.tag}
+                                    delay={r.delay}
+                                    img={r.img}
+                                />
+                            );
+                        })
+                    }
                 </div>
-
             </div>
         </div>
-
         <!-- ==================== End portfolio ==================== -->
-
-
     </div>
-
 </div>
