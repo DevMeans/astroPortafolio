@@ -1,0 +1,20 @@
+---
+interface Props {
+    fecha: string;
+    cargo: string;
+    empresa: string;
+    funciones: string;
+}
+const { fecha, cargo, empresa, funciones } = Astro.props;
+---
+
+<div class="swiper-slide">
+    <div class="item text-center">
+        <h6 class="main-color date fz-15 mb-60">{fecha}</h6>
+        <h5>{cargo}</h5>
+        <span class="opacity-8 fw-500 mt-10">[ {empresa} ]</span>
+        <p class="fz-13 mt-15">
+            {funciones}
+        </p>
+    </div>
+</div>
